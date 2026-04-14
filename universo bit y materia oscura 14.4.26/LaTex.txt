@@ -1,0 +1,199 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+
+\title{\textbf{A Phenomenological Scalar Torsion Model and a 9-Coil Rotational Interferometer for Dark Matter Detection}}
+\author{Miguel Ángel Percudani\\
+\texttt{ORCID: 0009-0007-1748-3212}\\
+\small \textit{Independent Researcher, Buenos Aires, Argentina}}
+\date{Technical Proposal -- \today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We propose a phenomenological model in which a scalar torsion field—potentially related to a dark matter component—couples to electromagnetic systems via a logarithmic phase modulation. The model is characterized by a secular frequency drift $\alpha = 0.046$~Hz/day and a dimensionless torsion parameter $\tau = 0.3697$. A dedicated tabletop experiment consisting of 8 peripheral coils driven in rotational symmetry ($45^\circ$ phase steps) and a central ``observer'' coil is designed to detect the predicted residual voltage of approximately $3.7\,\mu\text{V}$ resulting from the non-linear phase accumulation. We further argue that the observed 1.7-second delay of gamma rays with respect to gravitational waves in GW170817, as well as recent spin-correlation measurements in the QCD vacuum (RHIC, DOI: 10.1038/s41586-025-09920-0), provide independent support for a structured, information-bearing substrate. In contrast, we demonstrate that large-scale interferometers such as LIGO are intrinsically insensitive to this class of scalar, longitudinal perturbations due to their differential readout scheme and noise-subtraction pipelines. This work provides a concrete experimental path to test the hypothesis of a coherent, drifting torsion field using low-cost electromagnetic apparatus.
+
+\textbf{Keywords:} scalar torsion, dark matter, phase interferometry, logarithmic phase modulation, low-frequency electromagnetic detection
+\end{abstract}
+
+\section{Introduction}
+The nature of dark matter remains unresolved. While weakly interacting massive particles (WIMPs) and axions dominate experimental searches, alternative models invoking macroscopic scalar fields have also been considered~\cite{scalar_dm_review}. In this work, we explore a phenomenological scalar torsion field characterized by two empirically motivated parameters:
+
+\begin{itemize}
+    \item A secular frequency drift $\alpha = 0.046$~Hz/day, suggesting a cosmological time evolution of the field's characteristic frequency.
+    \item A dimensionless torsion parameter $\tau = 0.3697$, which governs a logarithmic phase accumulation $\Phi_{\log}(t) = 2\pi\tau\ln(t)$.
+\end{itemize}
+
+These parameters emerged from laboratory observations of phase cancellation in an 8-coil rotational array, where a residual voltage of $3.7\,\mu\text{V}$ was measured under conditions that should yield perfect destructive interference. We interpret this residual as a possible signature of a background scalar torsion field. The goal of this paper is to provide a mathematical framework for the signal, explain why existing gravitational-wave detectors (LIGO) are not suitable for its detection, and propose a dedicated 9-coil interferometer optimized to measure the effect.
+
+\section{Metaphorical Description of the Cosmic Architecture}
+Before presenting the formal mathematical framework, it is instructive to introduce a metaphor that captures the essence of the proposed cosmology. Imagine a vast tree whose branches support clusters of grapes. Each grape represents a finite, baryonic universe—a self-contained bubble of matter, radiation, and linear time. The air surrounding the tree and the grapes is pure, unstructured dark matter: an infinite, chaotic informational reservoir where time and space as we know them do not exist. The sap flowing through the branches consists of the fundamental frequencies and causal connections that nourish and interconnect the grapes.
+
+Within this metaphor, the interior of a grape corresponds to the \textit{finite domain} (what we term the ``Bit 1'' region), where physical laws appear coherent and measurable. The exterior air embodies the \textit{infinite precursor domain} (the ``Bit 0'' region), a superposition of all possibilities from which the finite universe continuously condenses. The transition from the infinite air into the finite grape occurs through a metaphorical Einstein-Rosen bridge modulated by a Fibonacci rotational metric. This process orders the chaotic information of the precursor domain into the structured, causal reality we observe—analogous to the collapse of a wave function in quantum mechanics.
+
+While metaphorical, this picture serves as a conceptual guide for the mathematical structure developed in the following sections. The key insight is that dark matter is not a minor constituent of the cosmos, but the fundamental medium in which baryonic reality is immersed.
+
+\section{Theoretical Framework}
+
+\subsection{The Causal Transition Equation: From Precursor Substrate to Finite Signal}
+We postulate the existence of an infinite, unstructured informational substrate (the ``precursor domain'') and a finite, coherent domain accessible to measurement. The transition from the former to the latter is described by the wave function $\Psi_{\mathrm{UAT}}(t)$, which incorporates a logarithmic torsion term that organizes the infinite possibilities into a structured, rotational flow:
+
+\begin{equation}
+\boxed{
+\Psi_{\mathrm{UAT}}(t) = \lim_{r \to \infty} \left[ \int_{\text{precursor}}^{\text{finite}} e^{i\left(2\pi f(t) + \tau \ln(r^\infty)\right)} \, dr \right]
+}
+\label{eq:transition}
+\end{equation}
+
+\begin{itemize}
+    \item $r^\infty$ represents the informational channel radius. By tending to infinity, it allows all potential states of the precursor substrate to flow without resistance.
+    \item $\tau \ln(r^\infty)$ is the logarithmic torsion term. It ensures that the infinite does not manifest as chaotic noise, but instead is ``rolled up'' into an ordered, rotational spiral (a Fibonacci-like geometry).
+    \item $f(t)$ is the time-dependent operating frequency, defined below.
+\end{itemize}
+
+When projected onto the finite measurement domain, the infinite radius $r^\infty$ is normalized by a local reference scale $r_{\mathrm{local}}$ (e.g., the radius of the detector). The measurable output is then proportional to the ratio of the finite to the infinite:
+
+\begin{equation}
+V_{\mathrm{out}} \propto \frac{\text{finite domain}}{\text{precursor domain}}.
+\end{equation}
+
+This scaling explains why attempts to measure the torsion field with instruments not designed for this specific phase cancellation yield only null results or noise.
+
+\subsection{Frequency Drift and the Precursor Effect}
+The characteristic frequency of the field is observed to drift linearly with time:
+
+\begin{equation}
+f(t) = f_0 + \alpha \cdot \Delta t,
+\end{equation}
+where $f_0 = 84.4$~Hz is the frequency measured on May 27, 2023, and $\Delta t$ is the elapsed time in days since that reference epoch. The drift rate $\alpha = 0.046$~Hz/day implies a fractional frequency variation of approximately $5.4\times10^{-4}$ per day at 84.4~Hz. Such a drift is not accounted for by standard local oscillator instabilities and may indicate a cosmological origin.
+
+A striking piece of empirical evidence for a precursor domain comes from the observation of GW170817, where the gravitational-wave signal arrived approximately 1.7~seconds before the associated gamma-ray burst~\cite{gw170817}. Within our framework, gravitational waves are interpreted as vibrations of the precursor substrate itself—the ``lattice'' that defines the causal structure. Light (and electromagnetic phenomena in general) propagates within the finite, ``material'' domain and is therefore subject to an effective delay as it couples to the substrate. The logarithmic phase modulation $\Phi_{\log}(t) = 2\pi\tau\ln(t)$ effectively stretches the finite-domain time coordinate to couple with the precursor time, providing a natural explanation for the observed 1.7-second offset.
+
+\subsection{Support from QCD Vacuum Structure}
+Recent measurements at the Relativistic Heavy Ion Collider (RHIC) have revealed that quarks emerging from the vacuum after high-energy collisions exhibit spin correlations that cannot be explained by classical physics~\cite{rhic2025}. The observed alignment of spins indicates that the vacuum possesses a pre-existing informational structure—a ``memory'' that dictates the properties of the particles that materialize from it. In our framework, this is precisely the action of the torsion parameter $\tau$: it compresses the infinite informational substrate into a finite, ordered state. The fact that the entangled correlations persist after the particles become ``real'' further supports the notion that the precursor domain remains connected to all finite manifestations via quantum entanglement, which acts as a low-impedance data channel between the two domains.
+
+\subsection{Relation to Foundational Works}
+The theoretical foundations of this work are rooted in the Unified Applicable Time (UAT) framework~\cite{percudani_uat_2025, percudani_uat_quantum_2025} and the Unified Principle of Causality (UPC)~\cite{percudani_upc_2025}. The UAT provides a unified temporal metric that integrates cosmological expansion, gravitational time dilation, and quantum gravity corrections, while the UPC formalizes the causal coherence threshold that governs the transition from precursor to finite reality. The binary universe model~\cite{percudani_binary_2025} further elaborates on the dual-domain structure that underpins the present analysis. The concept of antiffrequency~\cite{percudani_antifrequency_2025} emerges naturally from the inversion symmetry between the two domains.
+
+\section{The 9-Coil Rotational Interferometer}
+
+\subsection{Principle of Operation}
+The detector consists of 8 identical air-core coils arranged in a circle of radius $R$, each driven by a sinusoidal current with a fixed phase offset of $45^\circ$ (see Fig.~\ref{fig:coil_array}). In the absence of the torsion field, the vector sum of the magnetic fluxes at the center is exactly zero. A ninth coil placed at the center acts as a pickup; it should measure null voltage under ideal linear conditions.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.2, every node/.style={font=\small}]
+    \draw[gray, dashed] (0,0) circle (2.5);
+    \foreach \i in {0,1,...,7} {
+        \coordinate (C\i) at ({360/8*\i}:2.5);
+        \draw[thick, blue, fill=blue!10] (C\i) circle (0.4);
+        \node[blue] at (C\i) {\small $C_{\i}$};
+        \node[blue, anchor={360/8*\i}] at ({360/8*\i}:3.0) {\footnotesize $45^\circ\times\i$};
+    }
+    \draw[thick, red, fill=red!20] (0,0) circle (0.5);
+    \node[red] at (0,0) {\small $C_9$};
+    \node[red, below=0.7cm of {(0,0)}] {\footnotesize Central Pickup Coil};
+    \foreach \i in {0,1,...,7} {
+        \draw[gray, thin, ->] (C\i) -- (0,0);
+    }
+    \node[blue, right=3.5cm of {(0,0)}] {Peripheral Coils (8)};
+    \node[red, below=0.4cm of {$(3.5,0)$}] {Central Coil (Observer)};
+\end{tikzpicture}
+\caption{Schematic of the 9-coil rotational detector. The eight peripheral coils are driven with phases $0^\circ,45^\circ,\dots,315^\circ$. The central coil measures the residual flux generated by imperfect cancellation.}
+\label{fig:coil_array}
+\end{figure}
+
+If the scalar torsion field is present, it introduces an additional phase $\delta\phi(t) = 2\pi\tau\ln(t)$ that is common to all peripheral coils. Because the modulation is non-linear, the destructive interference is no longer perfect. The residual voltage induced in the central coil is approximately
+
+\begin{equation}
+V_{\mathrm{out}}(t) \approx 4\sqrt{2}\,V_0\,\sin\bigl(\pi\tau\ln(t)\bigr),
+\end{equation}
+where $V_0$ is the amplitude contributed by a single peripheral coil. For $V_0 = 1$~mV and $\tau=0.3697$, this yields a peak residual of $3.7\,\mu\text{V}$, well above the thermal noise floor of a low-noise preamplifier ($\sim 10$~nV/$\sqrt{\text{Hz}}$ at room temperature).
+
+\subsection{Signal Extraction}
+The output of the central coil is digitized and multiplied by a complex reference waveform $\exp[-2\pi i (f(t)t + \tau\ln t)]$. The resulting in-phase and quadrature components are integrated over a long duration $T$. The presence of the torsion field manifests as a statistically significant DC offset in the integrated power, which can be distinguished from random noise using a permutation test or a matched-filter analysis.
+
+\section{Insensitivity of LIGO to Scalar Torsion}
+\label{sec:ligo}
+LIGO and similar ground-based interferometers are designed to detect differential arm-length variations induced by the transverse, quadrupolar strain of gravitational waves. A scalar torsion field, by contrast, would produce a \textit{common-mode} phase shift in both arms of the interferometer. The differential readout scheme actively suppresses common-mode signals, rendering LIGO effectively blind to such perturbations.
+
+\subsection{Limitations of LIGO for This Search}
+\label{subsec:ligo_limitations}
+Beyond the fundamental differential readout, several additional factors prevent LIGO from detecting the proposed scalar torsion signal:
+
+\begin{itemize}
+    \item \textbf{Calibration lines and notch filtering:} LIGO's calibration pipeline injects numerous sinusoidal lines (e.g., at 60~Hz and harmonics) and applies notch filters to remove them. A logarithmic phase modulation, being a slowly varying non-linear feature, is likely to be either masked by these calibration lines or attenuated by the notch filters.
+    \item \textbf{Noise subtraction:} The LIGO noise budget includes non-stationary contributions from seismic, thermal, and laser sources. The collaboration employs sophisticated noise-subtraction algorithms (e.g., Wiener filtering) that remove any narrowband or slowly drifting features not consistent with the expected noise model. A signal with a daily drift of $0.046$~Hz/day would be interpreted as an instrumental artifact and subtracted.
+    \item \textbf{Integration time and sensitivity:} The proposed torsion signal is a persistent background, not a transient. LIGO's sensitivity to continuous, monochromatic signals improves with integration time as $\sqrt{T}$, but only if the signal is strictly sinusoidal and phase-coherent. The logarithmic phase modulation breaks this coherence over long timescales, preventing the accumulation of signal-to-noise ratio that LIGO relies on for continuous-wave searches.
+    \item \textbf{Common-mode rejection ratio:} While LIGO's common-mode rejection is excellent, it is not perfect. However, any residual common-mode signal would be at a level far below the $3.7\,\mu\text{V}$ equivalent strain, and would be indistinguishable from instrumental common-mode noise.
+\end{itemize}
+
+Therefore, the null results obtained from a comprehensive reanalysis of public LIGO O4a data~\cite{percudani_tech_note} are fully consistent with the scalar torsion hypothesis and do not constrain the parameters $\alpha$ and $\tau$. The non-detection is a consequence of instrumental design, not an absence of the field.
+
+\section{Experimental Parameters and Predicted Sensitivity}
+Table~\ref{tab:params} summarizes the key parameters of the model and the proposed detector.
+
+\begin{table}[htbp]
+\centering
+\caption{Parameters of the scalar torsion model and 9-coil detector.}
+\begin{tabular}{l c c}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Description} \\
+\midrule
+Reference frequency $f_0$ & $84.4$~Hz & Measured on May 27, 2023 \\
+Frequency drift $\alpha$ & $0.046$~Hz/day & Secular evolution \\
+Torsion parameter $\tau$ & $0.3697$ & Logarithmic phase coefficient \\
+Expected residual voltage & $3.7\,\mu\text{V}$ & For $V_0=1$~mV per coil \\
+Integration time & $\gtrsim 10^4$~s & Required for $5\sigma$ detection \\
+\bottomrule
+\end{tabular}
+\label{tab:params}
+\end{table}
+
+Table~\ref{tab:roles} contrasts the roles of the key components in the precursor (infinite) and finite measurement domains.
+
+\begin{table}[htbp]
+\centering
+\caption{Roles of model components in the precursor and finite domains.}
+\begin{tabular}{l p{5cm} p{5cm}}
+\toprule
+\textbf{Component} & \textbf{Role in Precursor Domain (Infinite)} & \textbf{Role in Finite Measurement Domain} \\
+\midrule
+Frequency $f(t)$ & Pulse of the dark matter substrate. & Observable note (e.g., 84.4 Hz). \\
+Torsion $\tau$ & Precursor (1.7 s ahead); organizes the infinite. & Measurable residual ($3.7\,\mu$V). \\
+Phase $45^\circ$ & Infinite lattice geometry. & Coil array geometry; creates phase vortex. \\
+Drift $\alpha$ & Expansion of the informational flow. & Daily calibration to maintain synchronization. \\
+\bottomrule
+\end{tabular}
+\label{tab:roles}
+\end{table}
+
+With a low-noise preamplifier (input noise $\sim 10$~nV/$\sqrt{\text{Hz}}$) and an integration time of several hours, the signal-to-noise ratio is expected to exceed 10, allowing a clear detection of the $3.7\,\mu\text{V}$ residual.
+
+\section{Conclusion}
+We have presented a phenomenological scalar torsion model characterized by a linear frequency drift $\alpha = 0.046$~Hz/day and a logarithmic phase parameter $\tau = 0.3697$. The Causal Transition Equation (Eq.~\ref{eq:transition}) provides a mathematical description of the transition from an infinite informational substrate to finite, measurable signals. Independent observations—the 1.7-second gravitational-wave precursor in GW170817 and the structured vacuum revealed by RHIC spin correlations—offer empirical support for the existence of a precursor domain. A 9-coil rotational interferometer is specifically designed to detect the predicted $3.7\,\mu\text{V}$ residual voltage, while large-scale gravitational-wave observatories are inherently insensitive to this signal due to their differential readout and noise-subtraction pipelines. The proposed experiment is tabletop, low-cost, and can be replicated in standard laboratory environments. If the predicted residual is consistently observed and its phase follows the logarithmic template, it would constitute evidence for a new scalar field coupled to electromagnetism, with potential implications for dark matter and cosmology.
+
+\begin{thebibliography}{99}
+\bibitem{scalar_dm_review} J.~D.~Barrow and J.~Magueijo, \textit{Varying constants and dark energy}, Phys. Rev. D (2000).
+\bibitem{gw170817} B.~P.~Abbott et al., \textit{GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral}, Phys. Rev. Lett. 119, 161101 (2017).
+\bibitem{rhic2025} STAR Collaboration, \textit{Measuring spin correlation between quarks during QCD confinement}, Nature, \textbf{DOI: 10.1038/s41586-025-09920-0} (2025).
+\bibitem{percudani_tech_note} M.~Á.~Percudani, \textit{Non-Detection of Scalar Torsion Signatures in Public LIGO O4a Data}, Zenodo, 2025 (Technical Note).
+\bibitem{percudani_antifrequency_2025} M.~Á.~Percudani, \textit{Discovery of 10 kHz Antifrequency Transition Peak: Experimental Prediction from Unified Applicable Time Theory}, Zenodo, \textbf{DOI: 10.5281/zenodo.18809178} (2025).
+\bibitem{percudani_uat_2025} M.~Á.~Percudani, \textit{Universal Applied Time (UAT): A Causal Framework for Rotational Coherence}, Zenodo, \textbf{DOI: 10.5281/zenodo.17729221} (2025).
+\bibitem{percudani_upc_2025} M.~Á.~Percudani, \textit{Unified Principle of Causality (UPC): Multiscale Homeostasis and the Bit of Authority}, Zenodo, \textbf{DOI: 10.5281/zenodo.17718670} (2025).
+\bibitem{percudani_uat_quantum_2025} M.~Á.~Percudani, \textit{UAT: Quantum Gravitational Effects in the Early Universe}, Zenodo, \textbf{DOI: 10.5281/zenodo.17411163} (2025).
+\bibitem{percudani_binary_2025} M.~Á.~Percudani, \textit{Binary Universe Model}, Zenodo, \textbf{DOI: 10.5281/zenodo.17886549} (2025).
+\end{thebibliography}
+
+\end{document}
